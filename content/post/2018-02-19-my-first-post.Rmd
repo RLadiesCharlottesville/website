@@ -1,0 +1,21 @@
+---
+title: My first post
+author: Samantha Toet
+date: '2018-02-19'
+slug: my-first-post
+categories:
+  - Meetup
+tags:
+  - N00b
+---
+
+
+## MY FIRST HEADER 
+
+this is a paragraph
+
+```{r}
+head(mtcars)
+print("Hello world!")
+```
+
