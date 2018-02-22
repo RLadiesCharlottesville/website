@@ -33,9 +33,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
-
-    [params.logo]
-    url = "logo.png"
+    
+[params.logo]
+    url = "~/static/RLadies.png"
     width = 50
     height = 50
     alt = "Logo"
