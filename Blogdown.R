@@ -11,12 +11,7 @@
 
 
 
-#### Getting Started ####
 
-install.packages("blogdown")
-library(blogdown)
-blogdown::install_hugo()
-# LiveReload automatically rebuilds and reloads the site in your web browser
 
 # Three basic components of a Hugo-based website:
 
@@ -152,7 +147,14 @@ blogdown::install_theme("halogenica/beautifulhugo") #this will create a new
 #           least these patterns:
 #           ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 #       vii.) uglyURLs: by default, Hugo generates “clean” URLs
-content/
+# 2.) content/
+#   a.) common structure is that there are a few static pages under the root 
+#           of content/, and a subdirectory post/ containing blog posts
+#   b.) YAML metadata: specifies information like the title, date, author, 
+#           categories, tags, etc. 
+#       i.) draft: true only renders posts marked as draft in preview mode
+#       ii.) publishdate: specify a future publish date
+#       iii.) 
 #   - static/
 #   - themes/
 #   - layouts/
@@ -163,6 +165,11 @@ content/
 
 
 #### Recommended Workflow ####
+
+install.packages("blogdown")
+library(blogdown)
+blogdown::install_hugo()
+# LiveReload automatically rebuilds and reloads the site in your web browser
 
 # To start a new website:
 
