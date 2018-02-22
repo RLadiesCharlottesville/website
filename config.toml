@@ -35,5 +35,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
     
-
+[params.logo]
+    url = "/img/avatar-con.png"
+    width = 50
+    height = 50
+    alt = "Logo"
 
