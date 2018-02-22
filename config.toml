@@ -22,9 +22,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "Meetup"
     url = "https://www.meetup.com/rladies-charlottesville"
 
-[params]
+[Params]
     description = "A website built through Hugo and blogdown."
-
+    logo = "RLadies.png" # need to be here
+    
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
     highlightjsCDN = "//cdn.bootcss.com"
@@ -34,9 +35,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
     
-[params.logo]
-    url = "~/static/RLadies.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+
 
