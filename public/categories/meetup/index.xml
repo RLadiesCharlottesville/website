@@ -6,19 +6,28 @@
     <description>Recent content in Meetup on RLadies Cville</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/meetup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My first post</title>
-      <link>/2018/02/19/my-first-post/</link>
-      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      <title>Intro to RStudio</title>
+      <link>/2017/12/05/intro-to-rstudio/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/my-first-post/</guid>
-      <description>MY FIRST HEADER this is a paragraph
-head(mtcars) ## mpg cyl disp hp drat wt qsec vs am gear carb ## Mazda RX4 21.0 6 160 110 3.90 2.620 16.46 0 1 4 4 ## Mazda RX4 Wag 21.0 6 160 110 3.90 2.875 17.02 0 1 4 4 ## Datsun 710 22.8 4 108 93 3.85 2.320 18.61 1 1 4 1 ## Hornet 4 Drive 21.4 6 258 110 3.</description>
+      <guid>/2017/12/05/intro-to-rstudio/</guid>
+      <description>Help with installation  R RStudio   Intro to workshop  Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and the dataset that we will work with for the remainder of the lesson. We will cover very basic functionality in R, including variables, functions, and importing/inspecting data frames. Who I am Who are you? Why do you want to learn R?</description>
+    </item>
+    
+    <item>
+      <title>Launching R-Ladies Charlottesville</title>
+      <link>/2017/11/14/launching-r-ladies-charlottesville/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/14/launching-r-ladies-charlottesville/</guid>
+      <description>Welcome! These are the slides created for our kickoff meeting. Next time they will be made in R Markdown ;)
+ </description>
     </item>
     
   </channel>

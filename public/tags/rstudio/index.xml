@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rstudio on RLadies Cville</title>
+    <link>/tags/rstudio/</link>
+    <description>Recent content in Rstudio on RLadies Cville</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to RStudio</title>
+      <link>/2017/12/05/intro-to-rstudio/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/05/intro-to-rstudio/</guid>
+      <description>Help with installation  R RStudio   Intro to workshop  Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and the dataset that we will work with for the remainder of the lesson. We will cover very basic functionality in R, including variables, functions, and importing/inspecting data frames. Who I am Who are you? Why do you want to learn R?</description>
+    </item>
+    
+  </channel>
+</rss>

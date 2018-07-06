@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Intro to RStudio</title>
+  <meta property="og:title" content="Intro to RStudio" />
+  <meta name="twitter:title" content="Intro to RStudio" />
+  <meta name="description" content="Help with installation  R RStudio   Intro to workshop  Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and the dataset that we will work with for the remainder of the lesson. We will cover very basic functionality in R, including variables, functions, and importing/inspecting data frames. Who I am Who are you? Why do you want to learn R?">
+  <meta property="og:description" content="Help with installation  R RStudio   Intro to workshop  Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and the dataset that we will work with for the remainder of the lesson. We will cover very basic functionality in R, including variables, functions, and importing/inspecting data frames. Who I am Who are you? Why do you want to learn R?">
+  <meta name="twitter:description" content="Help with installation  R RStudio   Intro to workshop  Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and …">
+  <meta name="author" content=""/>
+  <meta property="og:image" content="/RLadies.png" />
+  <meta name="twitter:image" content="/RLadies.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="/2017/12/05/intro-to-rstudio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RLadies Cville" />
+
+  <meta name="generator" content="Hugo 0.36.1" />
+  <link rel="canonical" href="/2017/12/05/intro-to-rstudio/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="RLadies Cville">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">RLadies Cville</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/RLadiesCharlottesville">GitHub</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Media" href="https://www.dailyprogress.com">Media</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Meetup" href="https://www.meetup.com/rladies-charlottesville">Meetup</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/RLadiesCville">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="RLadies Cville" href="/">
+            <img class="avatar-img" src="/RLadies.png" alt="RLadies Cville" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Intro to RStudio</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 5, 2017
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <div id="help-with-installation" class="section level1">
+<h1>Help with installation</h1>
+<ul>
+<li>R</li>
+<li>RStudio</li>
+</ul>
+</div>
+<div id="intro-to-workshop" class="section level1">
+<h1>Intro to workshop</h1>
+<ul>
+<li>Welcome to R! This workshop is for people with little or no R experience. We will introduce the R statistical computing environment, RStudio, and the dataset that we will work with for the remainder of the lesson. We will cover very basic functionality in R, including variables, functions, and importing/inspecting data frames.</li>
+<li>Who I am</li>
+<li>Who are you? Why do you want to learn R?</li>
+</ul>
+</div>
+<div id="goals-for-today" class="section level1">
+<h1>Goals for today</h1>
+<ul>
+<li>Learn the basics of R</li>
+<li>Introduce the tidyverse</li>
+<li>Second hour = dplyr</li>
+</ul>
+</div>
+<div id="section" class="section level1">
+<h1>————————————————–</h1>
+</div>
+<div id="lesson" class="section level1">
+<h1>Lesson</h1>
+<div id="r-studio" class="section level3">
+<h3>R Studio</h3>
+<p>Let’s start by learning about RStudio. Open RStudio. <strong>R</strong> is the underlying statistical computing environment, but using R alone is no fun. <strong>RStudio</strong> is a graphical integrated development environment that makes using R much easier.</p>
+<ul>
+<li>Panes in RStudio. There are four panes, and their orientation is configurable under “Tools – Global Options.” I just stick with the defaults:
+<ul>
+<li>Editor in the top left</li>
+<li>Console bottom left</li>
+<li>Environment/history on the top right</li>
+<li>Plots/help on the bottom right.</li>
+</ul></li>
+<li><p>Projects: first, start a new project in a new folder somewhere easy to remember. When we start reading in data it’ll be important that the <em>code and the data are in the same place.</em> Creating a project creates an Rproj file that opens R running <em>in that folder</em>. This way, when you want to read in dataset <em>whatever.txt</em>, you just tell it the filename rather than a full path. This is critical for reproducibility, and we’ll talk about that more later.</p></li>
+<li><p>Code that you type into the console is code that R executes. From here forward we will use the editor window to write a script that we can save to a file and run it again whenever we want to. We usually give it a <code>.R</code> extension, but it’s just a plain text file. If you want to send commands from your editor to the console, use <code>CMD</code>+<code>Enter</code> (<code>Ctrl</code>+<code>Enter</code> on Windows).</p></li>
+<li><p>Anything after a <code>#</code> sign is a comment. Use them liberally to <em>comment your code</em>.</p></li>
+</ul>
+</div>
+<div id="basic-operations" class="section level2">
+<h2>Basic operations</h2>
+<p>R can be used as a glorified calculator. Try typing this in directly into the console. Make sure you’re typing into into the editor, not the console, and save your script. Use the run button, or press <code>CMD</code>+<code>Enter</code> (<code>Ctrl</code>+<code>Enter</code> on Windows).</p>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>5*4</code></pre>
+<pre><code>## [1] 20</code></pre>
+<pre class="r"><code>2^3</code></pre>
+<pre><code>## [1] 8</code></pre>
+<p>R knows order of operations and scientific notation.</p>
+<pre class="r"><code>2+3*4/(5+3)*15/2^2+3*4^2</code></pre>
+<pre><code>## [1] 55.625</code></pre>
+<pre class="r"><code>5e4</code></pre>
+<pre><code>## [1] 50000</code></pre>
+<p>However, to do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create objects, we need to give it a name followed by the assignment operator <code>&lt;-</code> and the value we want to give it:</p>
+<pre class="r"><code>weight_kg &lt;- 55</code></pre>
+<p><code>&lt;-</code> is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Mostly similar to <code>=</code> but not always. Learn to use <code>&lt;-</code> as it is good programming practice. Using <code>=</code> in place of <code>&lt;-</code> can lead to issues down the line. The keyboard shortcut for inserting the <code>&lt;-</code> operator is <code>Alt-dash</code> on a pc or <code>option-dash</code> on a mac.</p>
+<p>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. You want your object names to be explicit and not too long. They cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>). There are some names that cannot be used because they represent the names of fundamental functions in R. It is also recommended to use nouns for variable names, and verbs for function names.</p>
+<p>When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:</p>
+<pre class="r"><code>weight_kg</code></pre>
+<pre><code>## [1] 55</code></pre>
+<p>Now that R has <code>weight_kg</code> in memory, we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).</p>
+<pre class="r"><code>2.2 * weight_kg</code></pre>
+<pre><code>## [1] 121</code></pre>
+<p>We can also change a variable’s value by assigning it a new one:</p>
+<pre class="r"><code>weight_kg &lt;- 57.5
+2.2 * weight_kg</code></pre>
+<pre><code>## [1] 126.5</code></pre>
+<p>This means that assigning a value to one variable does not change the values of other variables. For example, let’s store the animal’s weight in pounds in a variable.</p>
+<pre class="r"><code>weight_lb &lt;- 2.2 * weight_kg</code></pre>
+<p>and then change <code>weight_kg</code> to 100.</p>
+<pre class="r"><code>weight_kg &lt;- 100</code></pre>
+<p>What do you think is the current content of the object <code>weight_lb</code>? 126.5 or 220?</p>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p>R has built-in functions.</p>
+<pre class="r"><code># Notice that this is a comment.
+# Anything behind a # is &quot;commented out&quot; and is not run.
+sqrt(144)</code></pre>
+<pre><code>## [1] 12</code></pre>
+<pre class="r"><code>log(1000)</code></pre>
+<pre><code>## [1] 6.907755</code></pre>
+<p>Get help by typing a question mark in front of the function’s name, or <code>help(functionname)</code>:</p>
+<pre><code>help(log)
+?log</code></pre>
+<p>Note syntax highlighting when typing this into the editor. Also note how we pass <em>arguments</em> to functions. The <code>base=</code> part inside the parentheses is called an argument, and most functions use arguments. Arguments modify the behavior of the function. Functions some input (e.g., some data, an object) and other options to change what the function will return, or how to treat the data provided. Finally, see how you can <em>nest</em> one function inside of another (here taking the square root of the log-base-10 of 1000).</p>
+<pre class="r"><code>log(1000)</code></pre>
+<pre><code>## [1] 6.907755</code></pre>
+<pre class="r"><code>log(1000, base=10)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>log(1000, 10)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>sqrt(log(1000, base=10))</code></pre>
+<pre><code>## [1] 1.732051</code></pre>
+<p><strong>EXERCISE</strong></p>
+<p>See <code>?abs</code> and calculate the square root of the log-base-10 of the absolute value of <code>-4*(2550-50)</code>. Answer should be <code>2</code>.</p>
+</div>
+<div id="data-frames" class="section level2">
+<h2>Data Frames</h2>
+<p>There are <em>lots</em> of different basic data structures in R. If you take any kind of longer introduction to R you’ll probably learn about arrays, lists, matrices, etc. Let’s skip straight to the data structure you’ll probably use most – the <strong>data frame</strong>. We use data frames to store heterogeneous tabular data in R: tabular, meaning that individuals or observations are typically represented in rows, while variables or features are represented as columns; heterogeneous, meaning that columns/features/variables can be different classes (on variable, e.g. age, can be numeric, while another, e.g., cause of death, can be text).</p>
+<p>We will initially be using the <code>read_*</code> functions from the [<strong>readr</strong> or <strong>tidyverse</strong> package]. These functions load data into a <em>tibble</em> instead of R’s traditional data.frame. Tibbles are data frames, but they tweak some older behaviors to make life a little easier. There is a nice reading about this on Hadley Wickham’s r4ds.had.co.nz page.</p>
+<p>The data we are going to look at is cleaned data from the National Health and Nutrition Examination Survey from the CDC.</p>
+<p>There are some built-in functions for reading in data in text files. These functions are <em>read-dot-something</em> – for example, <code>read.csv()</code> reads in comma-delimited text data; <code>read.delim()</code> reads in tab-delimited text, etc. We’re going to read in data a little bit differently here using the <a href="http://readr.tidyverse.org/">readr</a> package. When you load the readr package, you’ll have access to very similar looking functions, named <em>read-underscore-something</em> – e.g., <code>read_csv()</code>. You have to have the readr package installed to access these functions. Compared to the base functions, they’re <em>much</em> faster, they’re good at guessing the types of data in the columns, they don’t do some of the other silly things that the base functions do. We’re going to use another package later on called <a href="https://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a>, and if you have the dplyr package loaded as well, and you read in the data with readr, the data will display nicely.</p>
+<p>First let’s install and load those packages.</p>
+<pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
+library(tidyverse)</code></pre>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.4.2</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     
+## ✔ tibble  1.4.2          ✔ dplyr   0.7.5     
+## ✔ tidyr   0.8.0          ✔ stringr 1.3.1     
+## ✔ readr   1.1.1          ✔ forcats 0.3.0</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.4.3</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 3.4.3</code></pre>
+<pre><code>## Warning: package &#39;purrr&#39; was built under R version 3.4.2</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## Warning: package &#39;forcats&#39; was built under R version 3.4.3</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<p>If you see a warning that looks like this: <code>Error in library(packageName) : there is no package called 'packageName'</code>, then you don’t have the package installed correctly.</p>
+<div id="read_csv" class="section level3">
+<h3><code>read_csv()</code></h3>
+<p>Now, let’s actually load the data. You can get help for the import function with <code>?read_csv</code>. When we load data we assign it to a variable just like any other, and we can choose a name for that data. Since we’re going to be referring to this data a lot, let’s give it a short easy name to type. I’m going to call it <code>nh</code>. Once we’ve loaded it we can type the name of the object itself (<code>nh</code>) to see it printed to the screen.</p>
+<pre class="r"><code>nh &lt;- read_csv(file=&quot;~/Desktop/R-Ladies_Cville/RLadiesCville_website/static/nhanes.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_integer(),
+##   Gender = col_character(),
+##   Race = col_character(),
+##   Education = col_character(),
+##   MaritalStatus = col_character(),
+##   RelationshipStatus = col_character(),
+##   Insured = col_character(),
+##   Poverty = col_double(),
+##   HomeOwn = col_character(),
+##   Work = col_character(),
+##   Weight = col_double(),
+##   Height = col_double(),
+##   BMI = col_double(),
+##   Testosterone = col_double(),
+##   HDLChol = col_double(),
+##   TotChol = col_double(),
+##   Diabetes = col_character(),
+##   PhysActive = col_character(),
+##   SmokingStatus = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>nh</code></pre>
+<pre><code>## # A tibble: 5,000 x 32
+##       id Gender   Age Race    Education    MaritalStatus RelationshipStat…
+##    &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;            
+##  1 62163 male      14 Asian   &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;             
+##  2 62172 female    43 Black   High School  NeverMarried  Single           
+##  3 62174 male      80 White   College Grad Married       Committed        
+##  4 62174 male      80 White   College Grad Married       Committed        
+##  5 62175 male       5 White   &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;             
+##  6 62176 female    34 White   College Grad Married       Committed        
+##  7 62178 male      80 White   High School  Widowed       Single           
+##  8 62180 male      35 White   College Grad Married       Committed        
+##  9 62186 female    17 Black   &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;             
+## 10 62190 female    15 Mexican &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;             
+## # ... with 4,990 more rows, and 25 more variables: Insured &lt;chr&gt;,
+## #   Income &lt;int&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;,
+## #   Work &lt;chr&gt;, Weight &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;, Pulse &lt;int&gt;,
+## #   BPSys &lt;int&gt;, BPDia &lt;int&gt;, Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;,
+## #   TotChol &lt;dbl&gt;, Diabetes &lt;chr&gt;, DiabetesAge &lt;int&gt;, nPregnancies &lt;int&gt;,
+## #   nBabies &lt;int&gt;, SleepHrsNight &lt;int&gt;, PhysActive &lt;chr&gt;,
+## #   PhysActiveDays &lt;int&gt;, AlcoholDay &lt;int&gt;, AlcoholYear &lt;int&gt;,
+## #   SmokingStatus &lt;chr&gt;</code></pre>
+<p>Take a look at that output. The nice thing about loading dplyr and reading in data with readr is that data frames are displayed in a much more friendly way. This dataset has 5,000 rows and 32 columns. When you import data this way and try to display the object in the console, instead of trying to display all 5,000 rows, you’ll only see 10 by default. Also, if you have so many columns that the data would wrap off the edge of your screen, those columns will not be displayed, but you’ll see at the bottom of the output which, if any, columns were hidden from view. If you want to see the whole dataset, there are two ways to do this. First, you can click on the name of the data.frame in the <strong>Environment</strong> panel in RStudio. Or you could use the <code>View()</code> function (<em>with a capital V</em>).</p>
+<pre class="r"><code>View(nh)</code></pre>
+</div>
+</div>
+<div id="inspecting-data.frame-objects" class="section level2">
+<h2>Inspecting data.frame objects</h2>
+<p>There are several built-in functions that are useful for working with data frames.</p>
+<ul>
+<li>Content:
+<ul>
+<li><code>head()</code>: shows the first few rows</li>
+<li><code>tail()</code>: shows the last few rows</li>
+</ul></li>
+<li>Size:
+<ul>
+<li><code>dim()</code>: returns a 2-element vector with the number of rows in the first element, and the number of columns as the second element (the dimensions of the object)</li>
+<li><code>nrow()</code>: returns the number of rows</li>
+<li><code>ncol()</code>: returns the number of columns</li>
+</ul></li>
+<li>Summary:
+<ul>
+<li><code>colnames()</code> (or just <code>names()</code>): returns the column names</li>
+<li><code>str()</code>: structure of the object and information about the class, length and content of each column</li>
+<li><code>summary()</code>: works differently depending on what kind of object you pass to it. Passing a data frame to the <code>summary()</code> function prints out useful summary statistics about numeric column (min, max, median, mean, etc.)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>head(nh)</code></pre>
+<pre><code>## # A tibble: 6 x 32
+##      id Gender   Age Race  Education    MaritalStatus RelationshipStatus
+##   &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;             
+## 1 62163 male      14 Asian &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;              
+## 2 62172 female    43 Black High School  NeverMarried  Single            
+## 3 62174 male      80 White College Grad Married       Committed         
+## 4 62174 male      80 White College Grad Married       Committed         
+## 5 62175 male       5 White &lt;NA&gt;         &lt;NA&gt;          &lt;NA&gt;              
+## 6 62176 female    34 White College Grad Married       Committed         
+## # ... with 25 more variables: Insured &lt;chr&gt;, Income &lt;int&gt;, Poverty &lt;dbl&gt;,
+## #   HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,
+## #   Height &lt;dbl&gt;, BMI &lt;dbl&gt;, Pulse &lt;int&gt;, BPSys &lt;int&gt;, BPDia &lt;int&gt;,
+## #   Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;, TotChol &lt;dbl&gt;, Diabetes &lt;chr&gt;,
+## #   DiabetesAge &lt;int&gt;, nPregnancies &lt;int&gt;, nBabies &lt;int&gt;,
+## #   SleepHrsNight &lt;int&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;int&gt;,
+## #   AlcoholDay &lt;int&gt;, AlcoholYear &lt;int&gt;, SmokingStatus &lt;chr&gt;</code></pre>
+<pre class="r"><code>tail(nh)</code></pre>
+<pre><code>## # A tibble: 6 x 32
+##      id Gender   Age Race    Education     MaritalStatus RelationshipStat…
+##   &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;            
+## 1 71909 male      28 Mexican 9 - 11th Gra… NeverMarried  Single           
+## 2 71909 male      28 Mexican 9 - 11th Gra… NeverMarried  Single           
+## 3 71910 female     0 White   &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;             
+## 4 71911 male      27 Mexican College Grad  Married       Committed        
+## 5 71915 male      60 White   College Grad  NeverMarried  Single           
+## 6 71915 male      60 White   College Grad  NeverMarried  Single           
+## # ... with 25 more variables: Insured &lt;chr&gt;, Income &lt;int&gt;, Poverty &lt;dbl&gt;,
+## #   HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,
+## #   Height &lt;dbl&gt;, BMI &lt;dbl&gt;, Pulse &lt;int&gt;, BPSys &lt;int&gt;, BPDia &lt;int&gt;,
+## #   Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;, TotChol &lt;dbl&gt;, Diabetes &lt;chr&gt;,
+## #   DiabetesAge &lt;int&gt;, nPregnancies &lt;int&gt;, nBabies &lt;int&gt;,
+## #   SleepHrsNight &lt;int&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;int&gt;,
+## #   AlcoholDay &lt;int&gt;, AlcoholYear &lt;int&gt;, SmokingStatus &lt;chr&gt;</code></pre>
+<pre class="r"><code>dim(nh)</code></pre>
+<pre><code>## [1] 5000   32</code></pre>
+<pre class="r"><code>names(nh)</code></pre>
+<pre><code>##  [1] &quot;id&quot;                 &quot;Gender&quot;             &quot;Age&quot;               
+##  [4] &quot;Race&quot;               &quot;Education&quot;          &quot;MaritalStatus&quot;     
+##  [7] &quot;RelationshipStatus&quot; &quot;Insured&quot;            &quot;Income&quot;            
+## [10] &quot;Poverty&quot;            &quot;HomeRooms&quot;          &quot;HomeOwn&quot;           
+## [13] &quot;Work&quot;               &quot;Weight&quot;             &quot;Height&quot;            
+## [16] &quot;BMI&quot;                &quot;Pulse&quot;              &quot;BPSys&quot;             
+## [19] &quot;BPDia&quot;              &quot;Testosterone&quot;       &quot;HDLChol&quot;           
+## [22] &quot;TotChol&quot;            &quot;Diabetes&quot;           &quot;DiabetesAge&quot;       
+## [25] &quot;nPregnancies&quot;       &quot;nBabies&quot;            &quot;SleepHrsNight&quot;     
+## [28] &quot;PhysActive&quot;         &quot;PhysActiveDays&quot;     &quot;AlcoholDay&quot;        
+## [31] &quot;AlcoholYear&quot;        &quot;SmokingStatus&quot;</code></pre>
+<pre class="r"><code>str(nh)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    5000 obs. of  32 variables:
+##  $ id                : int  62163 62172 62174 62174 62175 62176 62178 62180 62186 62190 ...
+##  $ Gender            : chr  &quot;male&quot; &quot;female&quot; &quot;male&quot; &quot;male&quot; ...
+##  $ Age               : int  14 43 80 80 5 34 80 35 17 15 ...
+##  $ Race              : chr  &quot;Asian&quot; &quot;Black&quot; &quot;White&quot; &quot;White&quot; ...
+##  $ Education         : chr  NA &quot;High School&quot; &quot;College Grad&quot; &quot;College Grad&quot; ...
+##  $ MaritalStatus     : chr  NA &quot;NeverMarried&quot; &quot;Married&quot; &quot;Married&quot; ...
+##  $ RelationshipStatus: chr  NA &quot;Single&quot; &quot;Committed&quot; &quot;Committed&quot; ...
+##  $ Insured           : chr  &quot;Yes&quot; &quot;Yes&quot; &quot;Yes&quot; &quot;Yes&quot; ...
+##  $ Income            : int  100000 22500 70000 70000 12500 100000 2500 22500 22500 30000 ...
+##  $ Poverty           : num  4.07 2.02 4.3 4.3 0.39 5 0.05 0.87 0.53 0.54 ...
+##  $ HomeRooms         : int  6 4 7 7 7 8 6 6 6 4 ...
+##  $ HomeOwn           : chr  &quot;Rent&quot; &quot;Rent&quot; &quot;Own&quot; &quot;Own&quot; ...
+##  $ Work              : chr  NA &quot;NotWorking&quot; &quot;NotWorking&quot; &quot;NotWorking&quot; ...
+##  $ Weight            : num  49.4 98.6 95.8 95.8 23.9 68.7 85.9 89 63.5 38.5 ...
+##  $ Height            : num  169 172 168 168 120 ...
+##  $ BMI               : num  17.3 33.3 33.9 33.9 16.7 23.3 28.5 27.9 22.9 17 ...
+##  $ Pulse             : int  72 80 56 56 NA 92 68 66 86 76 ...
+##  $ BPSys             : int  107 103 97 97 NA 107 121 107 108 113 ...
+##  $ BPDia             : int  37 72 39 39 NA 69 72 66 64 27 ...
+##  $ Testosterone      : num  274.9 47.5 642.8 642.8 NA ...
+##  $ HDLChol           : num  1.14 1.89 1.4 1.4 NA 1.42 1.22 0.85 1.4 1.63 ...
+##  $ TotChol           : num  3.98 4.37 5.25 5.25 NA 4.42 5.2 3.7 3.21 4.11 ...
+##  $ Diabetes          : chr  &quot;No&quot; &quot;No&quot; &quot;No&quot; &quot;No&quot; ...
+##  $ DiabetesAge       : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ nPregnancies      : int  NA 3 NA NA NA 5 NA NA NA NA ...
+##  $ nBabies           : int  NA 2 NA NA NA 2 NA NA NA NA ...
+##  $ SleepHrsNight     : int  NA 8 9 9 NA 7 6 7 7 NA ...
+##  $ PhysActive        : chr  &quot;No&quot; &quot;No&quot; &quot;No&quot; &quot;No&quot; ...
+##  $ PhysActiveDays    : int  1 2 7 5 7 5 NA NA 4 7 ...
+##  $ AlcoholDay        : int  NA 3 NA NA NA 2 NA 1 NA NA ...
+##  $ AlcoholYear       : int  NA 104 0 0 NA 104 NA 2 NA NA ...
+##  $ SmokingStatus     : chr  NA &quot;Current&quot; &quot;Never&quot; &quot;Never&quot; ...
+##  - attr(*, &quot;spec&quot;)=List of 2
+##   ..$ cols   :List of 32
+##   .. ..$ id                : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ Gender            : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Age               : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ Race              : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Education         : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ MaritalStatus     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ RelationshipStatus: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Insured           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Income            : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ Poverty           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ HomeRooms         : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ HomeOwn           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Work              : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ Weight            : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ Height            : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ BMI               : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ Pulse             : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ BPSys             : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ BPDia             : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ Testosterone      : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ HDLChol           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ TotChol           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ Diabetes          : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ DiabetesAge       : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ nPregnancies      : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ nBabies           : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ SleepHrsNight     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ PhysActive        : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ PhysActiveDays    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ AlcoholDay        : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ AlcoholYear       : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ SmokingStatus     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;</code></pre>
+<pre class="r"><code>summary(nh)</code></pre>
+<pre><code>##        id           Gender               Age            Race          
+##  Min.   :62163   Length:5000        Min.   : 0.00   Length:5000       
+##  1st Qu.:64544   Class :character   1st Qu.:17.00   Class :character  
+##  Median :67039   Mode  :character   Median :36.00   Mode  :character  
+##  Mean   :67028                      Mean   :36.71                     
+##  3rd Qu.:69509                      3rd Qu.:54.00                     
+##  Max.   :71915                      Max.   :80.00                     
+##                                                                       
+##   Education         MaritalStatus      RelationshipStatus
+##  Length:5000        Length:5000        Length:5000       
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##                                                          
+##    Insured              Income          Poverty        HomeRooms     
+##  Length:5000        Min.   :  2500   Min.   :0.000   Min.   : 1.000  
+##  Class :character   1st Qu.: 30000   1st Qu.:1.190   1st Qu.: 4.000  
+##  Mode  :character   Median : 50000   Median :2.600   Median : 6.000  
+##                     Mean   : 57078   Mean   :2.761   Mean   : 6.193  
+##                     3rd Qu.:100000   3rd Qu.:4.760   3rd Qu.: 8.000  
+##                     Max.   :100000   Max.   :5.000   Max.   :13.000  
+##                     NA&#39;s   :377      NA&#39;s   :325     NA&#39;s   :28      
+##    HomeOwn              Work               Weight           Height     
+##  Length:5000        Length:5000        Min.   :  3.60   Min.   : 83.8  
+##  Class :character   Class :character   1st Qu.: 55.40   1st Qu.:156.5  
+##  Mode  :character   Mode  :character   Median : 72.10   Median :165.6  
+##                                        Mean   : 70.33   Mean   :161.5  
+##                                        3rd Qu.: 88.10   3rd Qu.:174.2  
+##                                        Max.   :198.70   Max.   :200.4  
+##                                        NA&#39;s   :31       NA&#39;s   :159    
+##       BMI            Pulse            BPSys           BPDia      
+##  Min.   :12.90   Min.   : 40.00   Min.   : 79.0   Min.   :  0.0  
+##  1st Qu.:21.50   1st Qu.: 66.00   1st Qu.:107.0   1st Qu.: 62.0  
+##  Median :25.80   Median : 72.00   Median :116.0   Median : 69.0  
+##  Mean   :26.44   Mean   : 73.63   Mean   :118.7   Mean   : 68.3  
+##  3rd Qu.:30.60   3rd Qu.: 82.00   3rd Qu.:128.0   3rd Qu.: 77.0  
+##  Max.   :80.60   Max.   :136.00   Max.   :221.0   Max.   :116.0  
+##  NA&#39;s   :166     NA&#39;s   :718      NA&#39;s   :719     NA&#39;s   :719    
+##   Testosterone        HDLChol         TotChol         Diabetes        
+##  Min.   :   0.25   Min.   :0.410   Min.   : 1.530   Length:5000       
+##  1st Qu.:  17.70   1st Qu.:1.090   1st Qu.: 4.060   Class :character  
+##  Median :  43.82   Median :1.290   Median : 4.730   Mode  :character  
+##  Mean   : 197.90   Mean   :1.361   Mean   : 4.831                     
+##  3rd Qu.: 362.41   3rd Qu.:1.580   3rd Qu.: 5.510                     
+##  Max.   :1795.60   Max.   :4.030   Max.   :12.280                     
+##  NA&#39;s   :874       NA&#39;s   :775     NA&#39;s   :775                        
+##   DiabetesAge     nPregnancies       nBabies       SleepHrsNight   
+##  Min.   : 1.00   Min.   : 1.000   Min.   : 0.000   Min.   : 2.000  
+##  1st Qu.:39.00   1st Qu.: 2.000   1st Qu.: 2.000   1st Qu.: 6.000  
+##  Median :50.00   Median : 3.000   Median : 2.000   Median : 7.000  
+##  Mean   :47.61   Mean   : 2.924   Mean   : 2.375   Mean   : 6.906  
+##  3rd Qu.:57.00   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 8.000  
+##  Max.   :80.00   Max.   :13.000   Max.   :11.000   Max.   :12.000  
+##  NA&#39;s   :4693    NA&#39;s   :3735     NA&#39;s   :3832     NA&#39;s   :1166    
+##   PhysActive        PhysActiveDays    AlcoholDay      AlcoholYear    
+##  Length:5000        Min.   :1.000   Min.   : 1.000   Min.   :  0.00  
+##  Class :character   1st Qu.:2.000   1st Qu.: 1.000   1st Qu.:  3.00  
+##  Mode  :character   Median :4.000   Median : 2.000   Median : 24.00  
+##                     Mean   :3.819   Mean   : 2.925   Mean   : 74.86  
+##                     3rd Qu.:5.000   3rd Qu.: 3.000   3rd Qu.:104.00  
+##                     Max.   :7.000   Max.   :82.000   Max.   :364.00  
+##                     NA&#39;s   :2614    NA&#39;s   :2503     NA&#39;s   :2016    
+##  SmokingStatus     
+##  Length:5000       
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+##                    
+## </code></pre>
+</div>
+<div id="accessing-variables-subsetting-data-frames" class="section level2">
+<h2>Accessing variables &amp; subsetting data frames</h2>
+<p>We can access individual variables within a data frame using the <code>$</code> operator, e.g., <code>mydataframe$specificVariable</code>. Let’s print out the SmokingStatus entries in the data. Then let’s calculate the average Weight across all the data (using the built-in <code>mean()</code> function).</p>
+<pre class="r"><code># display all Smoking Statuses
+nh$SmokingStatus</code></pre>
+<pre><code>##    [1] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+##    [7] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Former&quot; 
+##   [13] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##   [19] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+##   [25] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+##   [31] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;  
+##   [37] &quot;Current&quot; &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  NA       
+##   [43] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Former&quot;  NA       
+##   [49] &quot;Never&quot;   &quot;Former&quot;  NA        NA        NA        NA       
+##   [55] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA       
+##   [61] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+##   [67] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##   [73] &quot;Never&quot;   NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+##   [79] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##   [85] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##   [91] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+##   [97] &quot;Current&quot; &quot;Current&quot; NA        NA        NA        &quot;Former&quot; 
+##  [103] &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;  
+##  [109] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot; 
+##  [115] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+##  [121] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+##  [127] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [133] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [139] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+##  [145] NA        NA        NA        NA        NA        NA       
+##  [151] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [157] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+##  [163] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+##  [169] &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+##  [175] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [181] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+##  [187] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+##  [193] &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;  
+##  [199] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+##  [205] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [211] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [217] NA        NA        NA        NA        NA        NA       
+##  [223] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+##  [229] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        NA       
+##  [235] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [241] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+##  [247] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+##  [253] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+##  [259] &quot;Never&quot;   &quot;Former&quot;  NA        NA        &quot;Current&quot; NA       
+##  [265] &quot;Former&quot;  NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [271] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;  
+##  [277] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   NA        NA       
+##  [283] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [289] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [295] &quot;Former&quot;  NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [301] &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;  
+##  [307] NA        NA        NA        &quot;Former&quot;  &quot;Never&quot;   NA       
+##  [313] NA        NA        &quot;Never&quot;   NA        NA        NA       
+##  [319] NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [325] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+##  [331] &quot;Current&quot; NA        NA        NA        NA        &quot;Former&quot; 
+##  [337] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [343] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; NA        &quot;Former&quot; 
+##  [349] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+##  [355] NA        NA        NA        &quot;Current&quot; &quot;Never&quot;   &quot;Current&quot;
+##  [361] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [367] &quot;Former&quot;  &quot;Current&quot; NA        NA        NA        NA       
+##  [373] &quot;Current&quot; &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+##  [379] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot;
+##  [385] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot; 
+##  [391] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+##  [397] NA        NA        &quot;Never&quot;   NA        NA        &quot;Former&quot; 
+##  [403] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [409] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;  
+##  [415] NA        NA        &quot;Never&quot;   NA        NA        NA       
+##  [421] NA        NA        NA        &quot;Former&quot;  NA        NA       
+##  [427] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+##  [433] NA        &quot;Current&quot; &quot;Former&quot;  NA        NA        NA       
+##  [439] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;  
+##  [445] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        NA       
+##  [451] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [457] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+##  [463] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+##  [469] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+##  [475] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [481] NA        NA        NA        NA        NA        &quot;Never&quot;  
+##  [487] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [493] &quot;Current&quot; &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+##  [499] &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [505] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; NA       
+##  [511] NA        NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+##  [517] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+##  [523] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+##  [529] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [535] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+##  [541] NA        &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [547] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot;
+##  [553] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [559] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [565] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Current&quot;
+##  [571] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+##  [577] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+##  [583] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+##  [589] NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+##  [595] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+##  [601] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+##  [607] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [613] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Current&quot;
+##  [619] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Current&quot;
+##  [625] &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;   NA        NA       
+##  [631] NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [637] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [643] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot; 
+##  [649] NA        &quot;Current&quot; NA        NA        NA        &quot;Current&quot;
+##  [655] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [661] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+##  [667] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [673] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;   &quot;Former&quot; 
+##  [679] &quot;Current&quot; NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [685] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+##  [691] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+##  [697] &quot;Former&quot;  NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [703] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+##  [709] &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Former&quot;  &quot;Former&quot; 
+##  [715] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [721] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [727] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA       
+##  [733] NA        &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+##  [739] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA        NA       
+##  [745] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+##  [751] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA       
+##  [757] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [763] &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [769] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+##  [775] NA        NA        NA        &quot;Former&quot;  NA        &quot;Never&quot;  
+##  [781] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+##  [787] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [793] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Former&quot; 
+##  [799] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  NA        NA       
+##  [805] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [811] NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [817] &quot;Current&quot; NA        NA        NA        NA        NA       
+##  [823] &quot;Never&quot;   NA        NA        NA        NA        &quot;Never&quot;  
+##  [829] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; NA        &quot;Never&quot;  
+##  [835] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [841] NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [847] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;  
+##  [853] &quot;Never&quot;   &quot;Current&quot; NA        NA        NA        NA       
+##  [859] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Current&quot; &quot;Current&quot;
+##  [865] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+##  [871] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+##  [877] NA        NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [883] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  NA        NA        &quot;Current&quot;
+##  [889] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        NA       
+##  [895] NA        NA        NA        &quot;Never&quot;   NA        NA       
+##  [901] &quot;Current&quot; NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+##  [907] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+##  [913] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [919] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;  
+##  [925] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+##  [931] NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Former&quot; 
+##  [937] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  NA        NA       
+##  [943] NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+##  [949] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot; 
+##  [955] &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   NA        NA       
+##  [961] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+##  [967] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+##  [973] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;  
+##  [979] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; NA        NA       
+##  [985] NA        &quot;Current&quot; &quot;Current&quot; NA        &quot;Current&quot; &quot;Former&quot; 
+##  [991] &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+##  [997] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  NA       
+## [1003] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1009] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [1015] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot; 
+## [1021] NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [1027] &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [1033] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; NA        NA       
+## [1039] NA        NA        NA        NA        NA        NA       
+## [1045] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [1051] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [1057] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Current&quot; &quot;Never&quot;  
+## [1063] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1069] NA        NA        &quot;Never&quot;   &quot;Former&quot;  NA        NA       
+## [1075] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [1081] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [1087] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA       
+## [1093] NA        &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot; 
+## [1099] &quot;Former&quot;  NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1105] NA        NA        &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+## [1111] &quot;Never&quot;   &quot;Former&quot;  NA        NA        NA        &quot;Never&quot;  
+## [1117] &quot;Never&quot;   NA        NA        NA        NA        &quot;Current&quot;
+## [1123] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [1129] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [1135] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [1141] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [1147] NA        &quot;Former&quot;  NA        &quot;Former&quot;  NA        &quot;Never&quot;  
+## [1153] &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  NA       
+## [1159] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Current&quot; &quot;Former&quot; 
+## [1165] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1171] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1177] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [1183] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+## [1189] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1195] &quot;Former&quot;  NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1201] NA        &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   NA        NA       
+## [1207] &quot;Current&quot; &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot; 
+## [1213] &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [1219] &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot; 
+## [1225] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [1231] &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1237] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1243] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1249] NA        NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA       
+## [1255] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [1261] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot; 
+## [1267] NA        &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [1273] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1279] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [1285] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1291] NA        &quot;Never&quot;   &quot;Current&quot; NA        NA        &quot;Current&quot;
+## [1297] &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [1303] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        NA        NA       
+## [1309] &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Current&quot; &quot;Never&quot;  
+## [1315] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1321] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [1327] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1333] NA        &quot;Former&quot;  NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [1339] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [1345] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        NA       
+## [1351] &quot;Never&quot;   &quot;Current&quot; NA        NA        NA        NA       
+## [1357] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [1363] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1369] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA       
+## [1375] NA        NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+## [1381] &quot;Former&quot;  &quot;Former&quot;  NA        NA        NA        &quot;Current&quot;
+## [1387] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [1393] NA        NA        NA        NA        NA        NA       
+## [1399] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1405] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [1411] NA        &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1417] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1423] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1429] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1435] &quot;Never&quot;   NA        NA        NA        NA        NA       
+## [1441] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [1447] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [1453] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [1459] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Never&quot;  
+## [1465] &quot;Never&quot;   NA        NA        &quot;Current&quot; NA        &quot;Never&quot;  
+## [1471] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1477] &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;   NA        NA        NA       
+## [1483] NA        NA        NA        NA        &quot;Never&quot;   NA       
+## [1489] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1495] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1501] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1507] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1513] &quot;Former&quot;  NA        &quot;Never&quot;   NA        &quot;Former&quot;  NA       
+## [1519] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [1525] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1531] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [1537] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [1543] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [1549] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1555] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1561] NA        &quot;Former&quot;  &quot;Current&quot; NA        NA        &quot;Never&quot;  
+## [1567] &quot;Never&quot;   &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [1573] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1579] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot; 
+## [1585] &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [1591] NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1597] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [1603] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; NA        &quot;Former&quot; 
+## [1609] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [1615] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [1621] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [1627] &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1633] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1639] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1645] &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1651] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+## [1657] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Former&quot;  &quot;Current&quot;
+## [1663] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1669] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA        NA       
+## [1675] NA        &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;  
+## [1681] NA        NA        NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [1687] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+## [1693] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [1699] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1705] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1711] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Current&quot; NA        NA       
+## [1717] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [1723] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [1729] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        NA       
+## [1735] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [1741] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1747] NA        &quot;Never&quot;   NA        NA        NA        &quot;Current&quot;
+## [1753] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+## [1759] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1765] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+## [1771] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot;
+## [1777] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1783] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1789] NA        &quot;Never&quot;   NA        NA        NA        NA       
+## [1795] NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1801] NA        NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1807] &quot;Former&quot;  &quot;Former&quot;  NA        NA        NA        NA       
+## [1813] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1819] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [1825] NA        NA        NA        NA        NA        &quot;Current&quot;
+## [1831] NA        &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [1837] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot; 
+## [1843] &quot;Former&quot;  NA        NA        NA        NA        NA       
+## [1849] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1855] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [1861] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1867] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [1873] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        NA        NA       
+## [1879] NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+## [1885] NA        &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  NA        NA       
+## [1891] &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1897] &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA        NA       
+## [1903] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1909] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1915] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Current&quot; &quot;Former&quot; 
+## [1921] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1927] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [1933] NA        NA        NA        NA        NA        NA       
+## [1939] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        NA       
+## [1945] NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Current&quot;
+## [1951] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [1957] &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot;  NA        &quot;Current&quot; NA       
+## [1963] NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [1969] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1975] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [1981] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+## [1987] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [1993] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Current&quot;
+## [1999] NA        NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot;
+## [2005] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2011] NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Former&quot; 
+## [2017] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2023] &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2029] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2035] &quot;Never&quot;   NA        NA        NA        &quot;Former&quot;  &quot;Current&quot;
+## [2041] &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;   NA        NA       
+## [2047] NA        NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2053] &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2059] &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2065] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA       
+## [2071] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2077] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2083] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2089] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2095] NA        &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Never&quot;  
+## [2101] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;  
+## [2107] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [2113] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [2119] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [2125] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [2131] &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2137] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2143] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2149] NA        &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2155] &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2161] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Current&quot; NA        &quot;Former&quot; 
+## [2167] &quot;Never&quot;   NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [2173] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2179] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        &quot;Current&quot;
+## [2185] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2191] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; NA        &quot;Current&quot;
+## [2197] &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2203] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot;  NA       
+## [2209] NA        NA        &quot;Never&quot;   NA        &quot;Current&quot; NA       
+## [2215] NA        &quot;Former&quot;  NA        NA        &quot;Current&quot; &quot;Current&quot;
+## [2221] NA        NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2227] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [2233] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2239] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2245] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [2251] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [2257] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2263] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [2269] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2275] &quot;Former&quot;  NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2281] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2287] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2293] &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [2299] &quot;Former&quot;  NA        NA        NA        NA        NA       
+## [2305] NA        &quot;Former&quot;  NA        NA        &quot;Former&quot;  &quot;Former&quot; 
+## [2311] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2317] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+## [2323] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [2329] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2335] NA        &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2341] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2347] NA        &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   NA       
+## [2353] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   NA        NA        NA       
+## [2359] &quot;Current&quot; NA        NA        NA        &quot;Current&quot; &quot;Never&quot;  
+## [2365] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [2371] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2377] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2383] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA        NA       
+## [2389] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2395] &quot;Former&quot;  NA        &quot;Never&quot;   NA        NA        NA       
+## [2401] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2407] &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2413] &quot;Never&quot;   &quot;Former&quot;  NA        NA        NA        &quot;Never&quot;  
+## [2419] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [2425] &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [2431] &quot;Current&quot; NA        &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2437] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [2443] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [2449] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2455] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [2461] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+## [2467] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2473] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [2479] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2485] &quot;Never&quot;   NA        &quot;Never&quot;   NA        NA        &quot;Former&quot; 
+## [2491] NA        &quot;Never&quot;   NA        NA        NA        NA       
+## [2497] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [2503] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Current&quot;
+## [2509] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Former&quot; 
+## [2515] &quot;Never&quot;   NA        NA        NA        NA        NA       
+## [2521] NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+## [2527] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [2533] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [2539] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2545] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot;
+## [2551] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Former&quot; 
+## [2557] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        NA        &quot;Never&quot;  
+## [2563] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [2569] NA        NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [2575] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2581] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   NA        NA       
+## [2587] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [2593] &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; NA        NA        NA       
+## [2599] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [2605] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Never&quot;  
+## [2611] &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2617] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA       
+## [2623] NA        &quot;Former&quot;  NA        &quot;Former&quot;  NA        &quot;Never&quot;  
+## [2629] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2635] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA       
+## [2641] NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2647] &quot;Current&quot; &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2653] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA       
+## [2659] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2665] NA        &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [2671] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [2677] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2683] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot;
+## [2689] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2695] NA        NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2701] &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2707] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [2713] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2719] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+## [2725] NA        &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [2731] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2737] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2743] &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2749] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [2755] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA       
+## [2761] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2767] NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+## [2773] NA        &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   NA       
+## [2779] &quot;Never&quot;   NA        NA        NA        NA        &quot;Current&quot;
+## [2785] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2791] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Former&quot; 
+## [2797] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+## [2803] &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [2809] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2815] &quot;Never&quot;   &quot;Former&quot;  NA        NA        &quot;Never&quot;   NA       
+## [2821] NA        &quot;Never&quot;   &quot;Current&quot; NA        NA        &quot;Current&quot;
+## [2827] &quot;Former&quot;  &quot;Former&quot;  NA        NA        &quot;Current&quot; &quot;Never&quot;  
+## [2833] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [2839] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2845] NA        &quot;Former&quot;  NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [2851] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2857] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2863] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot; 
+## [2869] &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [2875] NA        NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2881] &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [2887] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [2893] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2899] NA        NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [2905] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA       
+## [2911] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  NA       
+## [2917] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2923] &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [2929] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [2935] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot; 
+## [2941] NA        NA        NA        NA        NA        NA       
+## [2947] &quot;Former&quot;  NA        &quot;Never&quot;   NA        NA        NA       
+## [2953] &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2959] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [2965] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA       
+## [2971] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [2977] &quot;Current&quot; &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2983] &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [2989] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [2995] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3001] NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3007] NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA       
+## [3013] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3019] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3025] &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;   NA       
+## [3031] NA        NA        &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot; 
+## [3037] &quot;Former&quot;  &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [3043] &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3049] NA        NA        NA        &quot;Never&quot;   NA        &quot;Current&quot;
+## [3055] &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; NA        NA       
+## [3061] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [3067] &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3073] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA       
+## [3079] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Former&quot; 
+## [3085] NA        NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [3091] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3097] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3103] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3109] &quot;Never&quot;   NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3115] &quot;Never&quot;   NA        NA        NA        NA        &quot;Former&quot; 
+## [3121] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3127] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3133] &quot;Current&quot; NA        NA        NA        &quot;Never&quot;   NA       
+## [3139] &quot;Never&quot;   &quot;Current&quot; NA        NA        NA        &quot;Never&quot;  
+## [3145] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   NA        NA       
+## [3151] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3157] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA        &quot;Current&quot;
+## [3163] &quot;Never&quot;   NA        &quot;Never&quot;   NA        NA        NA       
+## [3169] &quot;Former&quot;  NA        NA        NA        NA        NA       
+## [3175] &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot;
+## [3181] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3187] NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3193] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3199] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3205] &quot;Current&quot; &quot;Current&quot; NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3211] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3217] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3223] NA        NA        NA        NA        &quot;Former&quot;  NA       
+## [3229] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3235] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3241] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3247] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA       
+## [3253] &quot;Former&quot;  NA        NA        NA        NA        &quot;Never&quot;  
+## [3259] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [3265] &quot;Former&quot;  &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3271] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        NA       
+## [3277] &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Former&quot; 
+## [3283] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3289] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3295] &quot;Former&quot;  &quot;Former&quot;  NA        NA        NA        NA       
+## [3301] NA        &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Current&quot; &quot;Never&quot;  
+## [3307] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [3313] &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot; 
+## [3319] &quot;Former&quot;  NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [3325] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3331] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3337] &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;   NA       
+## [3343] NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3349] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3355] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  NA        NA       
+## [3361] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3367] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3373] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3379] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA       
+## [3385] &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [3391] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3397] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [3403] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   NA        NA        NA       
+## [3409] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;  
+## [3415] &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Former&quot;  NA        NA       
+## [3421] &quot;Never&quot;   &quot;Former&quot;  NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3427] NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3433] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; NA       
+## [3439] NA        NA        NA        NA        NA        &quot;Never&quot;  
+## [3445] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3451] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [3457] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3463] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;  
+## [3469] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3475] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3481] &quot;Never&quot;   &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [3487] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3493] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot;
+## [3499] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3505] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot; 
+## [3511] &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA       
+## [3517] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        &quot;Current&quot;
+## [3523] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;  
+## [3529] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3535] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3541] &quot;Never&quot;   NA        &quot;Never&quot;   NA        &quot;Never&quot;   NA       
+## [3547] &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; NA        NA       
+## [3553] NA        &quot;Never&quot;   &quot;Current&quot; NA        NA        &quot;Never&quot;  
+## [3559] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3565] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3571] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot;
+## [3577] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [3583] NA        &quot;Current&quot; &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Never&quot;  
+## [3589] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3595] NA        NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3601] NA        NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3607] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3613] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;  
+## [3619] NA        NA        &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot; 
+## [3625] &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot;
+## [3631] &quot;Current&quot; &quot;Former&quot;  NA        NA        NA        NA       
+## [3637] NA        &quot;Never&quot;   &quot;Former&quot;  NA        NA        &quot;Current&quot;
+## [3643] &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Current&quot;
+## [3649] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3655] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3661] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [3667] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA        NA       
+## [3673] &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3679] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3685] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        NA       
+## [3691] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [3697] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3703] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Never&quot;  
+## [3709] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3715] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [3721] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [3727] &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3733] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3739] &quot;Never&quot;   NA        NA        NA        NA        &quot;Never&quot;  
+## [3745] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot; 
+## [3751] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot; 
+## [3757] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [3763] NA        NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3769] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;  
+## [3775] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3781] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [3787] &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA        &quot;Former&quot; 
+## [3793] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Never&quot;  
+## [3799] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3805] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3811] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3817] NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3823] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3829] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3835] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Current&quot; &quot;Former&quot; 
+## [3841] &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot;  NA        NA        NA       
+## [3847] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3853] NA        &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [3859] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Current&quot; &quot;Current&quot;
+## [3865] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3871] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [3877] &quot;Current&quot; NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [3883] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [3889] NA        NA        &quot;Current&quot; NA        NA        &quot;Never&quot;  
+## [3895] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;  
+## [3901] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [3907] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3913] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [3919] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Former&quot;  &quot;Never&quot;  
+## [3925] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3931] &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3937] NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [3943] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [3949] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [3955] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot;
+## [3961] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Never&quot;  
+## [3967] &quot;Never&quot;   &quot;Former&quot;  NA        NA        &quot;Current&quot; &quot;Current&quot;
+## [3973] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        &quot;Current&quot;
+## [3979] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [3985] NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [3991] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [3997] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        NA       
+## [4003] NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4009] &quot;Former&quot;  NA        NA        NA        NA        NA       
+## [4015] NA        NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [4021] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA       
+## [4027] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4033] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [4039] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+## [4045] NA        &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [4051] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4057] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        NA        NA       
+## [4063] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        &quot;Former&quot; 
+## [4069] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        NA        NA       
+## [4075] NA        &quot;Former&quot;  NA        NA        NA        NA       
+## [4081] &quot;Current&quot; NA        NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [4087] &quot;Current&quot; &quot;Current&quot; NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4093] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot; 
+## [4099] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA        &quot;Never&quot;  
+## [4105] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA       
+## [4111] NA        &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4117] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [4123] &quot;Current&quot; &quot;Current&quot; NA        NA        &quot;Former&quot;  &quot;Never&quot;  
+## [4129] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4135] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [4141] &quot;Current&quot; NA        &quot;Never&quot;   NA        NA        NA       
+## [4147] NA        NA        &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [4153] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   NA        &quot;Never&quot;  
+## [4159] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4165] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4171] &quot;Never&quot;   &quot;Former&quot;  NA        &quot;Never&quot;   NA        NA       
+## [4177] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4183] &quot;Current&quot; NA        NA        NA        NA        NA       
+## [4189] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4195] &quot;Former&quot;  NA        NA        &quot;Never&quot;   NA        &quot;Former&quot; 
+## [4201] &quot;Current&quot; &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4207] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        NA       
+## [4213] NA        NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [4219] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4225] &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4231] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4237] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4243] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4249] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;   NA       
+## [4255] NA        NA        &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4261] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4267] &quot;Former&quot;  &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [4273] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [4279] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4285] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4291] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [4297] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4303] &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot; 
+## [4309] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA        NA       
+## [4315] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;  
+## [4321] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;  
+## [4327] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4333] &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4339] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4345] NA        NA        &quot;Current&quot; NA        &quot;Former&quot;  NA       
+## [4351] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4357] NA        NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4363] &quot;Never&quot;   NA        NA        &quot;Former&quot;  &quot;Current&quot; &quot;Never&quot;  
+## [4369] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4375] &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [4381] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4387] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4393] NA        NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4399] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Former&quot; 
+## [4405] &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+## [4411] NA        NA        NA        NA        &quot;Current&quot; &quot;Current&quot;
+## [4417] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4423] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4429] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;  
+## [4435] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [4441] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4447] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+## [4453] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        NA       
+## [4459] NA        NA        NA        NA        NA        &quot;Former&quot; 
+## [4465] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;  
+## [4471] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4477] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA       
+## [4483] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  NA        NA       
+## [4489] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [4495] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; NA       
+## [4501] NA        NA        NA        NA        &quot;Current&quot; &quot;Never&quot;  
+## [4507] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4513] &quot;Current&quot; NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4519] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; NA        &quot;Current&quot; &quot;Never&quot;  
+## [4525] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [4531] NA        NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4537] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4543] &quot;Never&quot;   NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4549] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4555] NA        NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4561] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot; 
+## [4567] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4573] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot; 
+## [4579] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;  
+## [4585] &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Former&quot;  &quot;Former&quot; 
+## [4591] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4597] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4603] &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot; NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4609] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA        &quot;Current&quot;
+## [4615] NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   NA       
+## [4621] NA        &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot; 
+## [4627] &quot;Former&quot;  NA        NA        NA        &quot;Former&quot;  &quot;Former&quot; 
+## [4633] &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4639] NA        NA        NA        &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [4645] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  NA        &quot;Never&quot;   &quot;Never&quot;  
+## [4651] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA       
+## [4657] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [4663] &quot;Never&quot;   &quot;Never&quot;   NA        NA        &quot;Current&quot; &quot;Current&quot;
+## [4669] &quot;Current&quot; NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4675] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [4681] NA        &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4687] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4693] &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4699] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [4705] &quot;Former&quot;  NA        &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;  
+## [4711] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot;
+## [4717] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4723] &quot;Current&quot; NA        NA        &quot;Former&quot;  NA        NA       
+## [4729] NA        &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot; &quot;Former&quot;  &quot;Current&quot;
+## [4735] &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4741] &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Former&quot; 
+## [4747] NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot;
+## [4753] &quot;Former&quot;  &quot;Former&quot;  NA        NA        NA        &quot;Current&quot;
+## [4759] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   NA        NA       
+## [4765] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA       
+## [4771] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4777] &quot;Never&quot;   &quot;Never&quot;   NA        NA        NA        NA       
+## [4783] &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   NA        &quot;Current&quot;
+## [4789] NA        &quot;Former&quot;  NA        &quot;Current&quot; NA        &quot;Never&quot;  
+## [4795] &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4801] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [4807] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [4813] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Former&quot; 
+## [4819] NA        NA        NA        NA        &quot;Current&quot; &quot;Former&quot; 
+## [4825] &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   NA        NA       
+## [4831] NA        NA        NA        &quot;Former&quot;  &quot;Former&quot;  NA       
+## [4837] NA        NA        &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4843] NA        NA        NA        &quot;Current&quot; &quot;Current&quot; NA       
+## [4849] NA        NA        NA        NA        &quot;Never&quot;   NA       
+## [4855] NA        &quot;Never&quot;   NA        NA        NA        NA       
+## [4861] NA        NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot; 
+## [4867] &quot;Never&quot;   &quot;Never&quot;   &quot;Current&quot; NA        &quot;Former&quot;  &quot;Former&quot; 
+## [4873] NA        NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4879] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [4885] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Never&quot;  
+## [4891] &quot;Never&quot;   NA        NA        NA        &quot;Never&quot;   &quot;Former&quot; 
+## [4897] &quot;Former&quot;  NA        NA        NA        &quot;Never&quot;   &quot;Current&quot;
+## [4903] &quot;Never&quot;   &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4909] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Current&quot; &quot;Never&quot;  
+## [4915] &quot;Never&quot;   NA        NA        &quot;Current&quot; &quot;Current&quot; &quot;Current&quot;
+## [4921] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   NA       
+## [4927] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  NA       
+## [4933] &quot;Never&quot;   &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;  
+## [4939] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;  
+## [4945] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot; NA        NA       
+## [4951] &quot;Never&quot;   NA        NA        &quot;Never&quot;   NA        NA       
+## [4957] NA        NA        NA        &quot;Current&quot; &quot;Former&quot;  &quot;Former&quot; 
+## [4963] &quot;Never&quot;   &quot;Never&quot;   NA        &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot; 
+## [4969] &quot;Never&quot;   NA        &quot;Former&quot;  &quot;Former&quot;  &quot;Never&quot;   &quot;Never&quot;  
+## [4975] &quot;Never&quot;   &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Former&quot;  &quot;Current&quot;
+## [4981] &quot;Current&quot; &quot;Current&quot; &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4987] &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;   &quot;Never&quot;  
+## [4993] &quot;Never&quot;   &quot;Current&quot; &quot;Current&quot; &quot;Current&quot; NA        &quot;Never&quot;  
+## [4999] &quot;Never&quot;   &quot;Never&quot;</code></pre>
+<pre class="r"><code>#mean Weight (kg)
+mean(nh$Weight)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>Oops. We got NA as the average weight. Why?</p>
+<pre class="r"><code>mean(nh$Weight, na.rm = TRUE) #kg</code></pre>
+<pre><code>## [1] 70.32769</code></pre>
+<p>Ok. That makes sense. We might actually be interested in seeing how Smoking, Diabetes, etc impact Weight. We’ll get to that in the dplyr lesson</p>
+<hr />
+<p><strong>EXERCISE</strong></p>
+<ol style="list-style-type: decimal">
+<li>What’s the standard deviation of Income (hint: get help on the <code>sd</code> function with <code>?sd</code>).</li>
+<li>What’s the range of Pulse represented in the data? (hint: <code>range()</code>).</li>
+</ol>
+</div>
+</div>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2017/11/14/launching-r-ladies-charlottesville/" data-toggle="tooltip" data-placement="top" title="Launching R-Ladies Charlottesville">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">RLadies Cville</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.36.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

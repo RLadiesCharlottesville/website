@@ -1,0 +1,18 @@
+---
+title: Launching R-Ladies Charlottesville
+author: Samantha Toet
+date: '2017-11-14'
+slug: launching-r-ladies-charlottesville
+categories:
+  - Meetup
+  - R
+tags:
+  - Kickoff
+subtitle: ''
+---
+
+Welcome! These are the slides created for our kickoff meeting. Next time they will be made in R Markdown ;)
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRasspEAIjRnCdrkO0g94IgCw-l6oPs5V6Aeas8q6q4GfZgRHoIzeKO0B-HXb7AzMehqE325n-OFZd_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kickoff on RLadies Cville</title>
+    <link>/tags/kickoff/</link>
+    <description>Recent content in Kickoff on RLadies Cville</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/kickoff/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Launching R-Ladies Charlottesville</title>
+      <link>/2017/11/14/launching-r-ladies-charlottesville/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/14/launching-r-ladies-charlottesville/</guid>
+      <description>Welcome! These are the slides created for our kickoff meeting. Next time they will be made in R Markdown ;)
+ </description>
+    </item>
+    
+  </channel>
+</rss>
