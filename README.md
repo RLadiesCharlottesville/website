@@ -1,2 +1,4 @@
-# website
-chapter website
+# R-Ladies Charlottesville Website
+
+www.rladiescharlottesville.com 
+
